@@ -78,4 +78,18 @@ function Linkedlist(){
         console.log("false")
         return false;
     }
+    function find(value){
+        let current = this.head
+        let count = 0;
+        while(current !== null){
+            if(current.data === value ){
+                console.log(count)
+                return count
+            }
+            count++;
+            current = current.next
+        }
+        console.log("null")
+        return null;
+    }
 }
