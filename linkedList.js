@@ -35,4 +35,18 @@ function Linkedlist(){
         }
         return tail;
     }
+    function getDataAtIndex(index){
+  
+        let current = this.head;
+        let count = 0;
+        while (current !== null) {
+            console.log(current)
+            if (count === index) {
+                return current.data;
+            }
+            count++;
+            current = current.next;
+        }
+        return null;
+    }
 }
