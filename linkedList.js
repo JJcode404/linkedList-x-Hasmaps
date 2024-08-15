@@ -25,4 +25,14 @@ function Linkedlist(){
         this.head = Node(data, this.head);
         this.size++
     }
+    function getTail(){
+        let tail = this.head
+        if(this.head == null){
+            return null;
+        }
+        while(tail.next !== null){
+            tail = tail.next
+        }
+        return tail;
+    }
 }
