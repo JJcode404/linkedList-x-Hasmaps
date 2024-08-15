@@ -50,20 +50,32 @@ function Linkedlist(){
         return null;
     }
     function popOutLastNode(){
-        const last = this.getTail(); 
-        let current = this.head;
-        this.size--;
-        if(this.head == null){
-            return null;
+    const last = this.getTail(); 
+    let current = this.head;
+    this.size--;
+    if(this.head == null){
+        return null;
+    }
+    // console.log(last)
+    if(this.head.next === null){
+        this.head = null;
+        return null
+    }
+    while(current.next.next !== null){
+        current = current.next;
+    }
+    current.next = null;
+    }
+    function contains(value){
+        let current = this.head
+        while(current !== null){
+            if(current.data === value ){
+                console.log("true")
+                return true
+            }
+            current = current.next
         }
-        // console.log(last)
-        if(this.head.next === null){
-            this.head = null;
-            return null
-        }
-        while(current.next.next !== null){
-            current = current.next;
-        }
-        current.next = null;
+        console.log("false")
+        return false;
     }
 }
