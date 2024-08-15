@@ -49,4 +49,21 @@ function Linkedlist(){
         }
         return null;
     }
+    function popOutLastNode(){
+        const last = this.getTail(); 
+        let current = this.head;
+        this.size--;
+        if(this.head == null){
+            return null;
+        }
+        // console.log(last)
+        if(this.head.next === null){
+            this.head = null;
+            return null
+        }
+        while(current.next.next !== null){
+            current = current.next;
+        }
+        current.next = null;
+    }
 }
