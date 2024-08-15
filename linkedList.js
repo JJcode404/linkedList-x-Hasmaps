@@ -96,23 +96,9 @@ function Linkedlist() {
     return this;
 }
 
-const ll = new Linkedlist();
-ll.AppendValue("amIndex0");
-ll.AppendValue("amIndex1");
-ll.AppendValue("amIndex2");
-ll.contains("amIndexd1");
-ll.find("amIndex1");
-
-// ll.AppendValue("amIndex3");
-// ll.PrependValue("amIndex4");
-// ll.popOutLastNode();
-// ll.popOutLastNode();
-// ll.popOutLastNode();
-// ll.popOutLastNode();
-
-console.log(JSON.stringify(ll));
-console.log(ll.toString());
-console.log(ll.getDataAtIndex(0));
+// console.log(JSON.stringify(ll));
+// console.log(ll.toString());
+// console.log(ll.getDataAtIndex(0));
 
 const fromLinkedList = "am on the other side hahahah";
 
