@@ -21,4 +21,8 @@ function Linkedlist(){
         }
         this.size++
     }
+    function PrependValue(data){
+        this.head = Node(data, this.head);
+        this.size++
+    }
 }
