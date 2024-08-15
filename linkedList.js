@@ -92,4 +92,15 @@ function Linkedlist(){
         console.log("null")
         return null;
     }
+    return{
+        head,
+        size,
+        getTail,
+        AppendValue,
+        PrependValue,
+        getDataAtIndex,
+        popOutLastNode,
+        contains,
+        find
+    }
 }
