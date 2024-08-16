@@ -40,7 +40,7 @@ function Hashmaps() {
         }
       }
     }
-    return false; 
+    return null; 
   }
   
     return this;
@@ -50,7 +50,7 @@ const hash = new Hashmaps();
 hash.set("thisKey", "am a value");
 hash.set("thisKey", "am a value neww");
 hash.set("mango", "am a value");
-console.log(hash.get("thisKey"))
+console.log(hash.get("thisKeyd"))
 
 console.log(fromLinkedList);
 
