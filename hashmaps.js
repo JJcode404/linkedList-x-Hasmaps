@@ -34,9 +34,9 @@ function Hashmaps() {
   this.get = (key) => {
     for(let i = 0; i < this.bucket.length; i++){
       if(this.bucket[i] instanceof Linkedlist){
-        const found = this.bucket[i].contains(key);
+        const found = this.bucket[i].find(key);
         if (found) {
-          return true;
+          return found;
         }
       }
     }
@@ -49,8 +49,8 @@ function Hashmaps() {
 const hash = new Hashmaps(); 
 hash.set("thisKey", "am a value");
 hash.set("thisKey", "am a value neww");
-hash.set("mango", "am a value");
-console.log(hash.get("thisKeyd"))
+hash.set("mango", "am a value for mango");
+console.log(hash.get("mango"))
 
 console.log(fromLinkedList);
 
