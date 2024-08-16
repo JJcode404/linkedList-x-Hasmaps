@@ -71,7 +71,7 @@ function Linkedlist() {
     this.contains = function (value) {
         let current = this.head;
         while (current !== null) {
-            if (current.data === value) {
+            if (current.data[0] === value) {
                 return true;
             }
             current = current.next;
