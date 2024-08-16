@@ -72,7 +72,7 @@ function Linkedlist() {
     this.contains = function (value) {
         let current = this.head;
         while (current !== null) {
-            if (current.data === value) {
+            if (current.data[0] === value) {
                 return true;
             }
             current = current.next;
@@ -84,7 +84,7 @@ function Linkedlist() {
         let current = this.head;
         let count = 0;
         while (current !== null) {
-            if (current.data === value) {
+            if (current.data[0] === value) {
                 return count;
             }
             count++;
