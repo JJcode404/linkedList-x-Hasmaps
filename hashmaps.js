@@ -77,6 +77,11 @@ function Hashmaps() {
     }
     return size; 
 }
+this.clear = () => {
+  for(let i = 0; i < this.bucket.length; i++){
+    this.bucket[i] = null;
+  }
+}
 return this;
 }
 
@@ -88,6 +93,7 @@ hash.set("mango", "am a value for mango");
 // console.log(hash.has("mangod"))
 // hash.remove("mango")
 // hash.remove("thisKey")
+hash.clear();
 console.log(hash.length())
 
 
