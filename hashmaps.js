@@ -67,8 +67,17 @@ function Hashmaps() {
     }
     return false; 
   }
-  
-    return this;
+  this.length = () => {
+    let size = 0;
+    for(let i = 0; i < this.bucket.length; i++){
+      if(this.bucket[i] instanceof Linkedlist){
+        const length = this.bucket[i].size
+        size += length
+      }
+    }
+    return size; 
+}
+return this;
 }
 
 const hash = new Hashmaps(); 
@@ -77,11 +86,13 @@ hash.set("thisKey", "am a value neww");
 hash.set("mango", "am a value for mango");
 // console.log(hash.get("mango"))
 // console.log(hash.has("mangod"))
-hash.remove("mango")
-hash.remove("thisKey")
+// hash.remove("mango")
+// hash.remove("thisKey")
+console.log(hash.length())
 
 
 
 
 console.log(console.log(JSON.stringify(hash.bucket)));
+
 
