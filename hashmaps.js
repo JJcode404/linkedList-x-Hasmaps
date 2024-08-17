@@ -77,6 +77,15 @@ function Hashmaps() {
     }
     return size; 
 }
+this.keys = () => {
+  let arrayOfkeys = []
+  for(let i = 0; i < this.bucket.length; i++){
+    if(this.bucket[i] instanceof Linkedlist){
+      arrayOfkeys.push(this.bucket[i].key())
+    }
+  }
+  return arrayOfkeys;
+}
 this.clear = () => {
   for(let i = 0; i < this.bucket.length; i++){
     this.bucket[i] = null;
@@ -93,11 +102,9 @@ hash.set("mango", "am a value for mango");
 // console.log(hash.has("mangod"))
 // hash.remove("mango")
 // hash.remove("thisKey")
-hash.clear();
+// hash.clear();
 console.log(hash.length())
-
-
-
+console.log(hash.keys())
 
 console.log(console.log(JSON.stringify(hash.bucket)));
 

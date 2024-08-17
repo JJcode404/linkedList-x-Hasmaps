@@ -78,6 +78,14 @@ function Linkedlist() {
         }
         return false;
     };
+    this.key = function () {
+        let current = this.head;
+        while (current !== null) {
+            return current.data[0];
+        }
+        current = current.next;
+        return false;
+    }
 
     this.find = function (value) {
         let current = this.head;
