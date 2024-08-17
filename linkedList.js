@@ -115,6 +115,15 @@ function Linkedlist() {
         }
         return false;
     }
+    this.getEntries = function () {
+        let current = this.head;
+        while (current !== null) {
+            return current.data;
+        
+        }
+        current = current.next;
+        return null;
+    }
 
     return this;
 }
