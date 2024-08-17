@@ -89,6 +89,16 @@ function Linkedlist() {
         }
         return null;
     };
+    this.valueTodelete = function (value) {
+        let current = this.head;
+        while (current !== null) {
+            if (current.data[0] === value) {
+                return current;
+            }
+            current = current.next;
+        }
+        return false;
+    }
 
     return this;
 }

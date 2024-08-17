@@ -29,7 +29,6 @@ function Hashmaps() {
               this.bucket[index] = ll;
           }
       }
-      console.log(JSON.stringify(this.bucket));
   };
   this.get = (key) => {
     for(let i = 0; i < this.bucket.length; i++){
@@ -53,6 +52,21 @@ function Hashmaps() {
     }
     return false; 
   }
+  this.remove = (key) => {
+    for(let i = 0; i < this.bucket.length; i++){
+      if(this.bucket[i] instanceof Linkedlist){
+        const found = this.bucket[i].valueTodelete(key);
+        const index = this.bucket.findIndex(bucketItem => {
+          return bucketItem && bucketItem.head === found;
+      });
+      if (index !== -1) {
+        this.bucket.splice(index, 1); 
+        return true;
+    }
+      }
+    }
+    return false; 
+  }
   
     return this;
 }
@@ -61,8 +75,13 @@ const hash = new Hashmaps();
 hash.set("thisKey", "am a value");
 hash.set("thisKey", "am a value neww");
 hash.set("mango", "am a value for mango");
-console.log(hash.get("mango"))
-console.log(hash.has("mangod"))
+// console.log(hash.get("mango"))
+// console.log(hash.has("mangod"))
+hash.remove("mango")
+hash.remove("thisKey")
 
-console.log(fromLinkedList);
+
+
+
+console.log(console.log(JSON.stringify(hash.bucket)));
 
