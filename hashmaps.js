@@ -86,6 +86,15 @@ this.keys = () => {
   }
   return arrayOfkeys;
 }
+this.values = () => {
+  let arrayOfvalues = []
+  for(let i = 0; i < this.bucket.length; i++){
+    if(this.bucket[i] instanceof Linkedlist){
+      arrayOfvalues.push(this.bucket[i].value())
+    }
+  }
+  return arrayOfvalues;
+}
 this.clear = () => {
   for(let i = 0; i < this.bucket.length; i++){
     this.bucket[i] = null;
@@ -104,7 +113,7 @@ hash.set("mango", "am a value for mango");
 // hash.remove("thisKey")
 // hash.clear();
 console.log(hash.length())
-console.log(hash.keys())
+console.log(hash.values())
 
 console.log(console.log(JSON.stringify(hash.bucket)));
 

@@ -84,7 +84,15 @@ function Linkedlist() {
             return current.data[0];
         }
         current = current.next;
-        return false;
+        return null;
+    }
+    this.value = function () {
+        let current = this.head;
+        while (current !== null) {
+            return current.data[1];
+        }
+        current = current.next;
+        return null;
     }
 
     this.find = function (value) {
