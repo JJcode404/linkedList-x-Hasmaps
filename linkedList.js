@@ -117,13 +117,16 @@ function Linkedlist() {
     }
     this.getEntries = function () {
         let current = this.head;
-        while (current !== null) {
-            return current.data;
+        let entries = [];
         
+        while (current !== null) {
+            entries.push(current.data);
+            current = current.next;
         }
-        current = current.next;
-        return null;
+        
+        return entries;
     }
+    
 
     return this;
 }

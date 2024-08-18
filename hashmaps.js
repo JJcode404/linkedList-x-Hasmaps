@@ -96,14 +96,20 @@ this.values = () => {
   return arrayOfvalues;
 }
 this.entries = () => {
-  let arrayOfentries = []
-  for(let i = 0; i < this.bucket.length; i++){
-    if(this.bucket[i] instanceof Linkedlist){
-      arrayOfentries.push(this.bucket[i].getEntries())
+  let arrayOfEntries = [];
+
+  for(let i = 0; i < this.bucket.length; i++) {
+    let current = this.bucket[i];
+
+    if(current instanceof Linkedlist) {
+      arrayOfEntries.push(...current.getEntries());
     }
   }
-  return arrayOfentries;
-}
+
+  return arrayOfEntries;
+};
+
+
 
 this.clear = () => {
   for(let i = 0; i < this.bucket.length; i++){
@@ -113,18 +119,30 @@ this.clear = () => {
 return this;
 }
 
-const hash = new Hashmaps(); 
-hash.set("thisKey", "am a value");
-hash.set("thisKey", "am a value neww");
-hash.set("mango", "am a value for mango");
+const test = new Hashmaps(); 
+test.set('apple', 'red')
+test.set('banana', 'yellow')
+test.set('carrot', 'orange')
+test.set('dog', 'brown')
+test.set('elephant', 'gray')
+test.set('frog', 'green')
+test.set('grape', 'purple')
+test.set('hat', 'black')
+test.set('ice cream', 'white')
+test.set('jacket', 'blue')
+test.set('kite', 'pink')
+test.set('lion', 'golden')
+test.set('moon', 'silver')
+
+
 // console.log(hash.get("mango"))
 // console.log(hash.has("mangod"))
 // hash.remove("mango")
 // hash.remove("thisKey")
 // hash.clear();
-console.log(hash.length())
-console.log(hash.entries())
+console.log(test.length())
+console.log(test.entries())
 
-console.log(console.log(JSON.stringify(hash.bucket)));
+console.log(console.log(JSON.stringify(test.bucket)));
 
 
